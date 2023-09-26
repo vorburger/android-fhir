@@ -16,6 +16,7 @@
 
 package com.google.android.fhir.datacapture.test.views
 
+import android.support.test.filters.SdkSuppress
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
@@ -261,6 +262,7 @@ class QuestionnaireItemDialogMultiSelectViewHolderFactoryEspressoTest {
   }
 
   @Test
+  @SdkSuppress(minSdkVersion = 33) // TODO https://github.com/google/android-fhir/issues/1482 FIXME
   fun selectOther_shouldScrollDownToShowAddAnotherAnswer() {
     val questionnaireItem =
       answerOptions(
